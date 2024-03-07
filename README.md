@@ -1,24 +1,14 @@
-# README
+##Configure postgres
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```shell
+kubectl apply -f config/kube/postgres
+```
 
-Things you may want to cover:
+### Test postgres
+```shell
+kubectl --namespace=default port-forward svc/postgres 5432:5432 
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+psql --host 127.0.0.1 -U root -d kubernetes-rails-example_production -p 5432
+```
