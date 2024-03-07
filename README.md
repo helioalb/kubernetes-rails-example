@@ -1,3 +1,13 @@
+# Rails on kubernetes
+
+## Add master key to kubernetes secrets
+
+```shell
+kubectl create secret generic rails-secrets --from-literal=rails_master_key='c8e77669b524379ca8c751e255265c1e'
+```
+
+:warning: Never versioning the rails_master_key. In this case it was made because it is an experiment.
+
 ##Configure postgres
 
 ```shell
